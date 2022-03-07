@@ -370,7 +370,7 @@
   <!--end berlangganan-->
 
 
+  @endsection
 </body>
 
 </html>
-@endsection
