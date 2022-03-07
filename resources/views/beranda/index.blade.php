@@ -26,6 +26,13 @@
   <!--CSS-->
   <link rel="stylesheet" href="css/beranda.css">
 
+  <style>
+    .carousel-img {
+      object-fit: cover;
+      object-position: top;
+      max-height: 94vh;
+    }
+  </style>
 </head>
 
 <body>
