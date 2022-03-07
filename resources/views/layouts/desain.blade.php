@@ -2,35 +2,35 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Prodamas Plus</title>
-
-    <!--icon-->
-    <link href="{{ asset('img/icon.png') }}" rel="icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-
-    <!--Goofle Font-->
+    <!-- Goofle Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Montserrat&display=swap" rel="stylesheet" />
 
-    <!--font awesome-->
+    <!-- Icon -->
+    <link href="{{ asset('img/icon.png') }}" rel="icon" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <!--CSS-->
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/desain.css') }}">
 
+    <title>Prodamas Plus</title>
 </head>
 
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4d148c">
-        <div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4d148c">
+        <div class="container-fluid mx-xxl-5">
             <a href="{{ url('/') }}"><img src="{{ asset('img/logoprodamas.png') }}" alt="" width="40" height="40" class="d-inline-block align-text-top" /></a>
-            <a href="{{ url('/') }}" class="navbar-brand" style="padding-left: 5px; font-family: Inter, sans-serif">PRODAMAS</a>
+            <a href="{{ url('/') }}" class="navbar-brand ms-2" style="font-family: Inter, sans-serif">PRODAMAS</a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,57 +63,113 @@
                             </a>
                             <ul class="dropdown-menu menu-navigation" aria-labelledby="dropdownMenuLink">
                                 {{-- <li><a class="dropdown-item @yield('grafik')" href="{{ url('/grafik') }}">Prodamas Dalam Grafik</a>
-                                </li> --}}
-                                <li><a class="dropdown-item @yield('peta')" href="{{ url('/peta') }}">Prodamas Dalam Peta</a></li>
-                                <li><a class="dropdown-item @yield('banksampah')" href="{{ url('/banksampah') }}"> Bank Sampah </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @yield('foto')" href="{{ url('foto') }}">Foto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @yield('video')" href="{{ url('video') }}">Video</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @yield('audio')" href="{{ url('audio') }}">Audio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @yield('media')" href="{{ url('media') }}">Medsos</a>
-                    </li>
-
+                    </li> --}}
+                    <li><a class="dropdown-item @yield('peta')" href="{{ url('/peta') }}">Prodamas Dalam Peta</a></li>
+                    <li><a class="dropdown-item @yield('banksampah')" href="{{ url('/banksampah') }}"> Bank Sampah </a></li>
                 </ul>
-                @yield('search','')
-                {{-- <form class="d-flex">
+            </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('foto')" href="{{ url('foto') }}">Foto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('video')" href="{{ url('video') }}">Video</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('audio')" href="{{ url('audio') }}">Audio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('media')" href="{{ url('media') }}">Medsos</a>
+            </li>
+
+            </ul>
+            @yield('search','')
+            {{-- <form class="d-flex">
                     <input class="form-control me-2" type="search"
                         style="font-family: 'Font Awesome 5 Free'; font-weight: 600; border-radius: 30px; height: 30px"
                         placeholder=" &#xf002;" aria-label="Search" />
                 </form> --}}
 
-                @auth
-                <div class="dropdown">
-                    <button class="btn" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user" style="font-size:20px; font-weight: lighter; color: white;"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item"><a href="{{ url('profil') }}" style="text-decoration: none; color: black;">Edit Profil</a></button></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><button class="dropdown-item"><a href="{{ url('logout') }}" style="text-decoration: none; color: black;">Logout</a></button></li>
-                    </ul>
-                </div>
-                @endauth
-                @guest
-                <a class="nav-icon position-relative text-decoration-none " href="{{ url('loginuser') }}">
-                    <i class="fa fa-fw fa-user text-light mr-3"></i>
-                </a>
-                @endguest
+            @auth
+            <div class="dropdown">
+                <button class="btn" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user" style="font-size:20px; font-weight: lighter; color: white;"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item"><a href="{{ url('profil') }}" style="text-decoration: none; color: black;">Edit Profil</a></button></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><button class="dropdown-item"><a href="{{ url('logout') }}" style="text-decoration: none; color: black;">Logout</a></button></li>
+                </ul>
+            </div>
+            @endauth
+            @guest
+            <a class="nav-icon position-relative text-decoration-none " href="{{ url('loginuser') }}">
+                <i class="fa fa-fw fa-user text-light mr-3"></i>
+            </a>
+            @endguest
 
+        </div>
+        </div>
+    </nav> -->
+    <!--end navbar-->
+    <!-- New Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-kediri" style="font-family: Inter">
+        <div class="container-fluid mx-xxl-5">
+            <img src="https://prodamasdev.kedirikota.go.id/img/logoprodamas.png" alt="" class="d-inline-block align-text-top" width="40" height="40" />
+            <a class="navbar-brand ms-2 stretched-link" href="{{ url('/') }}" style="font-family: Inter">PRODAMAS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Content -->
+            <div class="collapse navbar-collapse justify-content-evenly" id="navbarNavAltMarkup">
+                <!-- Middle -->
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link" href="#">Artikel</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkData" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkData">
+                            <li><a class="dropdown-item" href="#">Prodamas Dalam Peta</a></li>
+                            <li><a class="dropdown-item" href="#">E-Bank Sampah</a></li>
+                            <li><a class="dropdown-item" href="#">Progressio</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkMedia" role="button" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkMedia">
+                            <li><a class="dropdown-item" href="#">Foto</a></li>
+                            <li><a class="dropdown-item" href="#">Audio</a></li>
+                            <li><a class="dropdown-item" href="#">Video</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tentang</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAbout">
+                            <li><a class="dropdown-item" href="#">Prodamas</a></li>
+                            <li><a class="dropdown-item" href="#">Bidang</a></li>
+                            <li><a class="dropdown-item" href="#">Kampung Keren</a></li>
+                            <li><a class="dropdown-item" href="#">POKMAS</a></li>
+                            <li><a class="dropdown-item" href="#">MedSos</a></li>
+                        </ul>
+                    </div>
+                    <a class="nav-link" href="#">Kontak</a>
+                </div>
+
+                <!-- Medsos -->
+                <div>
+                    <div class="d-flex justify-content-evenly">
+                        <a href="https://www.youtube.com/channel/UCX6KxXBUbivqWXTku0nnPbA"><i class="fab fa-youtube mx-2 link-light"></i></a>
+                        <a href="https://www.instagram.com/prodamasplus/"><i class="fab fa-instagram mx-2 link-light"></i></a>
+                        <a href="https://www.facebook.com/Prodamas-Plus-105191455380017/"><i class="fab fa-facebook mx-2 link-light"></i></a>
+                        <a href="https://vt.tiktok.com/ZSejpETUx/"><i class="fab fa-tiktok mx-2 link-light"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
-    <!--end navbar-->
 
     @yield('content');
 
