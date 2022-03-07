@@ -115,7 +115,7 @@
     </nav> -->
     <!--end navbar-->
     <!-- New Nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-kediri" style="font-family: Inter">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-kediri" style="font-family: Inter; background-color: #4d148c">
         <div class="container-fluid mx-xxl-5">
             <img src="https://prodamasdev.kedirikota.go.id/img/logoprodamas.png" alt="" class="d-inline-block align-text-top" width="40" height="40" />
             <a class="navbar-brand ms-2 stretched-link" href="{{ url('/') }}" style="font-family: Inter">PRODAMAS</a>
