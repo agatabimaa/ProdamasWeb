@@ -61,7 +61,7 @@
         </div>
 
         @else
-        <div class="alert alert-success" role="alert">
+        <div class="border-bottom max-width: 10vw">
             Tidak ada data
         </div>
         @endif
